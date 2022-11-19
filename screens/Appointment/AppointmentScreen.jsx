@@ -7,7 +7,7 @@
 import React, { useLayoutEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import BoxButton from '../components/Appointment/AppointmentCenter/BoxButton';
+import BoxButton from '../../components/Appointment/AppointmentCenter/BoxButton';
 
 export default function AppointmentScreen() {
   const navigation = useNavigation();
@@ -20,7 +20,9 @@ export default function AppointmentScreen() {
     {
       title: 'Manage My Appointments',
       //  onPress: () => navigation.navigate('AppointmentHistory'),
-      onPress: () => {},
+      onPress: () => {
+        navigation.navigate('ManageAppointments');
+      },
     },
     {
       title: 'Drop-in Session (Zoom)',
