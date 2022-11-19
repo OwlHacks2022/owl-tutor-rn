@@ -13,8 +13,8 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabNavigator() {
   const TAB_ICON = {
     Home: 'home',
-    Forum: 'chatbubble-ellipses',
-    Appointment: 'calendar',
+    ForumTab: 'chatbubble-ellipses',
+    AppointmentTab: 'calendar',
     Profile: 'person',
   };
   return (
@@ -40,14 +40,14 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Forum"
+        name="ForumTab"
         component={ForumTab}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name="Appointment"
+        name="AppointmentTab"
         component={AppointmentTab}
         options={{
           headerShown: false,
