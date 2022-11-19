@@ -13,7 +13,7 @@ export default function HomeScreen() {
 				<Text style={styles.greetings}>Greetings, Oliver</Text>
 			</View>
 			<View style={styles.calenderContainer}>
-				<Text>Here are some events that's happening</Text>
+				<Text>Here are some events that are happening</Text>
 			</View>
 		</View>
 	);
