@@ -39,7 +39,13 @@ export default function BottomTabNavigator() {
 					headerTitle: 'Owl Tutor',
 				}}
 			/>
-			<Tab.Screen name="Forum" component={ForumTab} />
+			<Tab.Screen
+				name="Forum"
+				component={ForumTab}
+				options={{
+					headerShown: false,
+				}}
+			/>
 			<Tab.Screen name="Appointment" component={AppointmentScreen} />
 			<Tab.Screen name="Profile" component={ProfileScreen} />
 		</Tab.Navigator>
