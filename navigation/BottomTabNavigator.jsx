@@ -11,16 +11,21 @@ import { COLORS } from '../constants';
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
+	const TAB_ICON = {
+		Home: 'home',
+		Forum: 'chatbubble-ellipses',
+		Appointment: 'calendar',
+		Profile: 'person',
+	};
 	return (
 		<Tab.Navigator
 			screenOptions={({ route }) => ({
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName;
-					iconName = focused
-						? 'ios-information-circle'
-						: 'ios-information-circle-outline';
+					iconName = TAB_ICON[route.name];
 					return <Ionicons name={iconName} size={size} color={color} />;
 				},
+				tabBarActiveTintColor: COLORS.primary,
 				headerBackground: () => (
 					<View style={{ flex: 1, backgroundColor: COLORS.primary }} />
 				),
