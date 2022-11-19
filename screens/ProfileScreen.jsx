@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import { Button } from 'react-native-elements';
 import { COLORS } from '../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -45,7 +52,11 @@ export default function ProfileScreen() {
           <Text style={styles.infoText}>Computer Science</Text>
         </View>
       </View>
-      <Button title="Sign Out" buttonStyle={styles.button} />
+      <TouchableOpacity>
+        <View style={styles.signOutButton}>
+          <Text style={styles.buttonText}>Sign Out</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -85,6 +96,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     width: width - 40,
     paddingVertical: 10,
+    flex: 1,
   },
   singleLine: {
     flexDirection: 'row',
@@ -98,5 +110,16 @@ const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 16,
+  },
+  signOutButton: {
+    backgroundColor: COLORS.primary,
+    width,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 10,
+  },
+  buttonText: {
+    color: COLORS.white,
+    fontSize: 18,
   },
 });
