@@ -9,12 +9,18 @@ import {
 } from 'react-native';
 import { COLORS } from '../../../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
 export default function PostCard() {
+	const navigation = useNavigation();
 	return (
-		<TouchableOpacity>
+		<TouchableOpacity
+			onPress={() => {
+				navigation.navigate('ForumPost');
+			}}
+		>
 			<View style={styles.container}>
 				<View style={styles.left}>
 					<Image

@@ -3,6 +3,8 @@ import { View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ForumScreen from '../screens/Forum/ForumScreen';
 import CourseScreen from '../screens/Forum/CourseScreen';
+import ForumPostScreen from '../screens/Forum/ForumPostScreen';
+
 import { COLORS } from '../constants';
 
 const ForumTabStack = createNativeStackNavigator();
@@ -19,6 +21,7 @@ export default function ForumTab() {
 		>
 			<ForumTabStack.Screen name="Forum" component={ForumScreen} />
 			<ForumTabStack.Screen name="Course" component={CourseScreen} />
+			<ForumTabStack.Screen name="ForumPost" component={ForumPostScreen} />
 		</ForumTabStack.Navigator>
 	);
 }
