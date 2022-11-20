@@ -1,9 +1,8 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://i.imgur.com/AZ2iWek.png" alt="Project logo"></a>
+ <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/308/394/datas/gallery.jpg" alt="Project logo"></a>
 </p>
 <h3 align="center">owl-tutor</h3>
-
 <div align="center">
 
 [![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](http://hackathon.url.com)
@@ -26,7 +25,7 @@
 - [🧐 Problem Statement <a name = "problem_statement"></a>](#-problem-statement-)
 - [💡 Idea / Solution <a name = "idea"></a>](#-idea--solution-)
 - [⛓️ Dependencies / Limitations <a name = "limitations"></a>](#️-dependencies--limitations-)
-- [🚀 Future Scope <a name = "future_scope"></a>](#-future-scope-)
+- [🚀 Challenges <a name = "future_scope"></a>](#-challenges-)
 - [🏁 Getting Started <a name = "getting_started"></a>](#-getting-started-)
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
@@ -37,39 +36,19 @@
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
 
-It is useful to design and follow a specific format when writing a problem statement. While there are several options
-for doing this, the following is a simple and straightforward template often used in Business Analysis to maintain
-focus on defining the problem.
-
-- IDEAL: This section is used to describe the desired or “to be” state of the process or product. At large, this section
-  should illustrate what the expected environment would look like once the solution is implemented.
-- REALITY: This section is used to describe the current or “as is” state of the process or product.
-- CONSEQUENCES: This section is used to describe the impacts on the business if the problem is not fixed or improved upon.
-  This includes costs associated with loss of money, time, productivity, competitive advantage, and so forth.
-
-Following this format will result in a workable document that can be used to understand the problem and elicit
-requirements that will lead to a winning solution.
+Team O noticed the inefficiency in Foothill's current LCR Learning Resources Center). We all have experienced that feeling of being stuck in a homework question. It would be absurd to book a 30-minutes appointment to resolve this problem. Even the drop-in session can feel very awkward if we only ask a single question. Most of the time, we ended up guessing or searching the answer online without fully comprehending the topic. Owl Tutor aims to resolve this problem by connecting the Foothill community and enable these questions to be answered in a community-driven discussion forum.
 
 ## 💡 Idea / Solution <a name = "idea"></a>
 
-This section is used to describe potential solutions.
-
-Once the ideal, reality, and consequences sections have been
-completed, and understood, it becomes easier to provide a solution for solving the problem.
+The app has 3 main features: dashboard, appointment, and forum. The dashboard is presented in the main page and acts as a to-do list for the students. The dashboard allows students to get an overview of their days/weeks. The appointment features presents a user-friendly and easy-to-use interface that connects students with tutors pertaining to a particular subject. Lastly, the forum is a discussion space where students and tutors are able to answer course-specific questions. The app is personalized for each user as it utilizes Canvas API integration that provides almost all the data we need
 
 ## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
 
-- What are the dependencies of your project?
-- Describe each limitation in detailed but concise terms
-- Explain why each limitation exists
-- Provide the reasons why each limitation could not be overcome using the method(s) chosen to acquire.
-- Assess the impact of each limitation in relation to the overall findings and conclusions of your project, and if
-  appropriate, describe how these limitations could point to the need for further research.
+Owl Tutor uses React Native (frontend) and Firebase (backend) as well as Canvas API. Additionally, presentation video is made through canva.com
 
-## 🚀 Future Scope <a name = "future_scope"></a>
+## 🚀 Challenges <a name = "future_scope"></a>
 
-Write about what you could not develop during the course of the Hackathon; and about what your project can achieve
-in the future.
+There are a lot of problems that we ran into such as Canvas API implementation. Canvas API documentation was vague with some of its components not working properly. One major problem, however, was the authentication system. In order to access the OAuth2 system, it requires a devkey which can further complicate the data structure and implementation. Another problem we ran into is processing data format output. The user ID for canvas students has more than 16 digits of number and is outputted as an integer. As a result, an integer overflow occurs and the user id outputted does not match the actual one. Other challenges include UI/UX design, presentation, and time managements as Team O only consists of 2 members. A less technical challenge include academic integrity for app usage.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -102,18 +81,21 @@ until finished
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+```
+yarn install
+yarn start
+```
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [React Native](https://reactnative.dev/) - Mobile App
+- [Firebase](https://firebase.google.com/) - Backend
+- [Expo](https://expo.dev/) - Runtime
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@oliverchou](https://github.com/knhn1004) - Idea & Initial work
+- [@christopher-kusmana](https://github.com/Christopher-Kusmana) - Video, Paperwork
 
 See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
 who participated in this project.
