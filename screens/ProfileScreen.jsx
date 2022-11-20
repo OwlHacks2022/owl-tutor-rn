@@ -13,7 +13,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import useProfile from '../hooks/useProfile';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const PROFILE_PLACEHOLDER = require('../assets/images/profile_placeholder.png');
 

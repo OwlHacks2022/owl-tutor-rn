@@ -5,12 +5,18 @@
  */
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { COLORS } from '../constants';
+import useProfile from '../hooks/useProfile';
 
 export default function HomeScreen() {
+  const profile = useProfile();
+
   return (
     <View style={styles.container}>
       <View style={styles.hero}>
-        <Text style={styles.greetings}>Greetings, Oliver</Text>
+        <Text style={styles.greetings}>
+          Greetings, {profile?.name ? profile.name : '-'}
+        </Text>
       </View>
       <View style={styles.calenderContainer}>
         <Text style={styles.infoText}>
@@ -33,6 +39,7 @@ const styles = StyleSheet.create({
   hero: {
     padding: 20,
     width: '100%',
+    backgroundColor: COLORS.grey,
   },
   calenderContainer: {
     padding: 20,
