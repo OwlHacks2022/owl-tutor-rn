@@ -13,6 +13,7 @@ import LoadingIndicator from '../../components/common/LoadingIndicator';
 import { COLORS } from '../../constants';
 import canvasAPI from '../../api/canvas-api';
 import { useNavigation } from '@react-navigation/native';
+import JSONBigInt from 'json-bigint';
 
 export default function LoginScreen() {
   const [verifying, setVerifying] = useState(true);
@@ -51,18 +52,25 @@ export default function LoginScreen() {
         }
         try {
           setVerifying(true);
-          const res = await canvasAPI.get(`/courses?access_token=${token}`);
+          const res = await canvasAPI.get(`/courses?access_token=${token}`, {
+            transformResponse: [data => data],
+          });
+          const data = JSONBigInt.parse(res.data);
           if (res.status === 200) {
-            const userId = res.data[0]?.enrollments[0]?.user_id;
-            const accountId = res.data[0]?.account_id;
+            const userId = data[0]?.enrollments[0]?.user_id;
+            const accountId = data[0]?.account_id;
+            const rootAccountId = data[0]?.root_account_id;
 
             if (!userId || !accountId) {
               Alert.alert('Login Failed!');
               return;
             }
+            console.log(userId);
+
             await AsyncStorage.setItem('token', token);
             await AsyncStorage.setItem('userId', userId.toString());
             await AsyncStorage.setItem('accountId', accountId.toString());
+
             navigation.navigate('Root');
           }
         } catch (error) {

@@ -1,4 +1,5 @@
 import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   View,
   Text,
@@ -7,9 +8,9 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import { Button } from 'react-native-elements';
 import { COLORS } from '../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -18,6 +19,15 @@ const PROFILE_PLACEHOLDER = require('../assets/images/profile_placeholder.png');
 const UPVOTES = 0; // TODO: change this to read from db
 
 export default function ProfileScreen() {
+  const navigation = useNavigation();
+
+  const handleSignOut = async () => {
+    await AsyncStorage.removeItem('token');
+    await AsyncStorage.removeItem('userId');
+    await AsyncStorage.removeItem('accountId');
+    navigation.navigate('Login');
+  };
+
   return (
     <View style={styles.container}>
       <View>
@@ -52,7 +62,7 @@ export default function ProfileScreen() {
           <Text style={styles.infoText}>Computer Science</Text>
         </View>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleSignOut}>
         <View style={styles.signOutButton}>
           <Text style={styles.buttonText}>Sign Out</Text>
         </View>
