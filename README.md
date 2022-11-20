@@ -33,6 +33,7 @@
 - [⛏️ Built With <a name = "tech_stack"></a>](#️-built-with-)
 - [✍️ Authors <a name = "authors"></a>](#️-authors-)
 - [🎉 Acknowledgments <a name = "acknowledgments"></a>](#-acknowledgments-)
+- [Resources](#resources)
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
 
@@ -93,3 +94,9 @@ who participated in this project.
 - Hat tip to anyone whose code was used
 - Inspiration
 - References
+
+## Resources
+
+<a name="devpost"></a>
+
+- [devpost link](https://devpost.com/software/owl-tutor?ref_content=user-portfolio&ref_feature=in_progress)
