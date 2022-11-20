@@ -11,6 +11,7 @@ import {
 import { COLORS } from '../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import useProfile from '../hooks/useProfile';
 
 const { width, height } = Dimensions.get('window');
 
@@ -20,6 +21,7 @@ const UPVOTES = 0; // TODO: change this to read from db
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
+  const profile = useProfile();
 
   const handleSignOut = async () => {
     await AsyncStorage.removeItem('token');
@@ -31,7 +33,12 @@ export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <View>
-        <Image source={PROFILE_PLACEHOLDER} style={styles.avatar} />
+        {profile?.avatar_url ? (
+          <Image source={{ uri: profile.avatar_url }} style={styles.avatar} />
+        ) : (
+          //<Image source={PROFILE_PLACEHOLDER} style={styles.avatar} />
+          <Image source={PROFILE_PLACEHOLDER} style={styles.avatar} />
+        )}
       </View>
       <View style={styles.bannerArea}>
         <Ionicons
@@ -51,11 +58,15 @@ export default function ProfileScreen() {
       <View style={styles.infoContainer}>
         <View style={styles.singleLine}>
           <Text style={styles.label}>User Name</Text>
-          <Text style={styles.infoText}>Oliver</Text>
+          <Text style={styles.infoText}>
+            {profile?.name ? profile.name : '-'}
+          </Text>
         </View>
         <View style={styles.singleLine}>
           <Text style={styles.label}>CWID</Text>
-          <Text style={styles.infoText}>20123456</Text>
+          <Text style={styles.infoText}>
+            {profile?.login_id ? profile.login_id : '-'}
+          </Text>
         </View>
         <View style={styles.singleLine}>
           <Text style={styles.label}>Major</Text>
