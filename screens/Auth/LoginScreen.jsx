@@ -65,7 +65,6 @@ export default function LoginScreen() {
               Alert.alert('Login Failed!');
               return;
             }
-            console.log(userId);
 
             await AsyncStorage.setItem('token', token);
             await AsyncStorage.setItem('userId', userId.toString());

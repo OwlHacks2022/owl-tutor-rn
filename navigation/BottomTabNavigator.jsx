@@ -45,9 +45,16 @@ export default function BottomTabNavigator() {
         component={ForumTab}
         options={{
           headerShown: false,
+          title: 'Forum',
         }}
       />
-      <Tab.Screen name="AppointmentTab" component={AppointmentTab} />
+      <Tab.Screen
+        name="AppointmentTab"
+        component={AppointmentTab}
+        options={{
+          title: 'Appointments',
+        }}
+      />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );

@@ -3,6 +3,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import ManageAppointmentsScreen from '../screens/Appointment/ManageAppointmentsScreen';
 import { COLORS } from '../constants';
 import { useNavigation } from '@react-navigation/native';
+import CreateAppointmentScreen from '../screens/Appointment/CreateAppointmentScreen';
+import DropInAppointmentScreen from '../screens/Appointment/DropInAppointmentScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -24,8 +26,8 @@ export default function AppointmentTab() {
       }}
     >
       <Tab.Screen name="Manage" component={ManageAppointmentsScreen} />
-      <Tab.Screen name="New" component={ManageAppointmentsScreen} />
-      <Tab.Screen name="Drop-In" component={ManageAppointmentsScreen} />
+      <Tab.Screen name="New" component={CreateAppointmentScreen} />
+      <Tab.Screen name="Drop-In" component={DropInAppointmentScreen} />
     </Tab.Navigator>
   );
 }
