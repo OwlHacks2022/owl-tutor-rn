@@ -10,21 +10,26 @@ import useCourses from '../../hooks/useCourses';
 export default function CreateAppointmentScreen() {
   const [subject, setSubject] = useState('');
   const [tutor, setTutor] = useState('');
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState('11-20-2022');
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
 
   const { addAppointment } = useAppointments();
 
-  const handleSubmit = () => {
-    if (!subject.length || !tutor.length || !date.length) {
-      Alert.alert('Error', 'Please fill out all fields');
+  const handleSubmit = async () => {
+    console.log(subject, tutor, date);
+    //if (!subject.length || !tutor.length || !date.length) {
+    //  Alert.alert('Error', 'Please fill out all fields');
+    //}
+    try {
+      await addAppointment(subject, tutor, date);
+      setTutor('');
+      setDate('');
+      setSubject('');
+      Alert.alert('Success', 'Appointment created successfully');
+    } catch (error) {
+      console.error(error);
     }
-    addAppointment(subject, tutor, date);
-    setTutor('');
-    setDate('');
-    setSubject('');
-    Alert.alert('Success', 'Appointment created successfully');
   };
   const tutors = [
     { label: 'John Doe', value: 'John Doe' },
@@ -70,6 +75,7 @@ export default function CreateAppointmentScreen() {
           <DatePicker
             style={{ width: 200 }}
             confirmBtnText="Confirm"
+            format="MM-DD-YYYY"
             cancelBtnText="Cancel"
             onDateChange={setDate}
             date={date}

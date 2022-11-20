@@ -73,5 +73,6 @@ export default function useAppointments() {
     addAppointment,
     cancelAppointment,
     syncAppointments,
+    appointments,
   };
 }
