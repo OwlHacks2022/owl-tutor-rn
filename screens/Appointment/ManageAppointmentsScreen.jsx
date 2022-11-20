@@ -14,13 +14,13 @@ export default function ManageAppointmentsScreen() {
 
   const FAKE_APPOINTMENTS = [
     {
-      title: 'Math 1A',
-      subtitle: 'Tutor: John Doe',
-      datetime: 'Date: 01/01/2021 Time: 12:00 PM',
+      subject: 'Math 1A',
+      tutor: 'John Doe',
+      date: 'Date: 01/01/2021 Time: 12:00 PM',
     },
     {
-      title: 'Math 1B',
-      subtitle: 'Tutor: Jane Doe',
+      subject: 'Math 1B',
+      tutor: 'Tutor: Jane Doe',
       datetime: 'Date: 01/01/2021 Time: 12:00 PM',
     },
   ]; // TODO: read from db
