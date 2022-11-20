@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { View, StyleSheet, Image, Alert } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Alert,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import { Button } from 'react-native-elements';
 import LoadingIndicator from '../../components/common/LoadingIndicator';
 import { COLORS } from '../../constants';
@@ -85,6 +92,13 @@ export default function LoginScreen() {
           titleStyle={styles.buttonTitle}
           onPress={handleLogin}
         />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('WebView');
+          }}
+        >
+          <Text style={styles.howToLink}>How to get your Canvas token?</Text>
+        </TouchableOpacity>
       </View>
       {verifying ? <LoadingIndicator text="verifying" /> : null}
     </>
@@ -106,5 +120,10 @@ const styles = StyleSheet.create({
   buttonTitle: {
     color: COLORS.primary,
     fontWeight: 'bold',
+  },
+  howToLink: {
+    marginTop: 20,
+    color: COLORS.white,
+    textDecorationLine: 'underline',
   },
 });
