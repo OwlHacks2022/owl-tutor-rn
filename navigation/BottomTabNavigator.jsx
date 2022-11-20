@@ -47,13 +47,7 @@ export default function BottomTabNavigator() {
           headerShown: false,
         }}
       />
-      <Tab.Screen
-        name="AppointmentTab"
-        component={AppointmentTab}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Tab.Screen name="AppointmentTab" component={AppointmentTab} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );

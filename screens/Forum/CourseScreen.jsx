@@ -1,13 +1,6 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import React, { useLayoutEffect } from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  Dimensions,
-  FlatList,
-} from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import PostCard from '../../components/Forum/Course/PostCard';
 import { COLORS } from '../../constants';
 

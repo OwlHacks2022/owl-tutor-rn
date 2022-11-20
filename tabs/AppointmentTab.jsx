@@ -1,31 +1,31 @@
-import React from 'react';
-import { View } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { COLORS } from '../constants';
-import AppointmentScreen from '../screens/Appointment/AppointmentScreen';
+import React, { useLayoutEffect } from 'react';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import ManageAppointmentsScreen from '../screens/Appointment/ManageAppointmentsScreen';
+import { COLORS } from '../constants';
+import { useNavigation } from '@react-navigation/native';
 
-const AppointmentTabStack = createNativeStackNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 export default function AppointmentTab() {
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: 'Appointments',
+    });
+  }, []);
+
   return (
-    <AppointmentTabStack.Navigator
-      screenOptions={({ route }) => ({
-        headerBackground: () => (
-          <View style={{ flex: 1, backgroundColor: COLORS.primary }} />
-        ),
-        headerTintColor: COLORS.white,
-      })}
+    <Tab.Navigator
+      screenOptions={{
+        tabBarIndicatorStyle: {
+          backgroundColor: COLORS.primary,
+        },
+      }}
     >
-      <AppointmentTabStack.Screen
-        name="AppointmentCenter"
-        component={AppointmentScreen}
-      />
-      <AppointmentTabStack.Screen
-        name="ManageAppointments"
-        component={ManageAppointmentsScreen}
-      />
-    </AppointmentTabStack.Navigator>
+      <Tab.Screen name="Manage" component={ManageAppointmentsScreen} />
+      <Tab.Screen name="New" component={ManageAppointmentsScreen} />
+      <Tab.Screen name="Drop-In" component={ManageAppointmentsScreen} />
+    </Tab.Navigator>
   );
 }
