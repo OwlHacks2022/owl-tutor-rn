@@ -83,7 +83,7 @@ yarn start
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@oliverchou](https://github.com/knhn1004) - Idea & Initial work
-- [@christopher-kusmana](https://github.com/Christopher-Kusmana) - Video, Paperwork
+- [@christopher-kusmana](https://github.com/Christopher-Kusmana) - Video, Paperwork, Idea, UI/UX Design
 
 See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
 who participated in this project.
