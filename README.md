@@ -57,32 +57,20 @@ and testing purposes. See [deployment](#deployment) for notes on how to deploy t
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+- nodejs
+- yarn
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running.
 
-Say what the step will be
-
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+yarn install
 ```
 
 ## 🎈 Usage <a name="usage"></a>
 
 ```
-yarn install
 yarn start
 ```
 
