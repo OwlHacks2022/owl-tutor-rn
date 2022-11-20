@@ -17,9 +17,9 @@ instance.interceptors.request.use(
 
     if (!!token) {
       //  config.headers['Authorization'] = 'Bearer ' + token;
-      config.params = {
-        access_token: token,
-      };
+      //config.params = {
+      //  access_token: token,
+      //};
     }
 
     return config;

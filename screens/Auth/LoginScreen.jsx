@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   View,
@@ -15,9 +15,30 @@ import canvasAPI from '../../api/canvas-api';
 import { useNavigation } from '@react-navigation/native';
 
 export default function LoginScreen() {
-  const [verifying, setVerifying] = useState(false);
+  const [verifying, setVerifying] = useState(true);
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const verifyToken = async () => {
+      try {
+        const token = await AsyncStorage.getItem('token');
+        const res = await canvasAPI.get(`/courses?access_token=${token}`);
+        if (res.status === 200) {
+          navigation.navigate('Root');
+        } else {
+          await AsyncStorage.removeItem('token');
+          await AsyncStorage.removeItem('userId');
+          await AsyncStorage.removeItem('userName');
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setVerifying(false);
+      }
+    };
+    verifyToken();
+  }, []);
 
   const handleLogin = () => {
     Alert.prompt(
