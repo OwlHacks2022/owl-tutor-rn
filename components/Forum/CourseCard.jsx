@@ -23,14 +23,6 @@ export default function CourseCard({ name }) {
       }}
     >
       <View style={styles.container}>
-        <View
-          style={[
-            styles.courseImagePlaceHolder,
-            {
-              backgroundColor: COLORS['grey-darken'],
-            },
-          ]}
-        />
         <View style={styles.wrapper}>
           <Text style={styles.courseTitle}>{name}</Text>
         </View>
@@ -43,7 +35,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
     width,
-    marginVertical: 10,
+    paddingVertical: 10,
+    borderColor: COLORS.grey,
+    borderBottomWidth: 2,
   },
   courseImagePlaceHolder: {
     width,

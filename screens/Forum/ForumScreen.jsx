@@ -4,14 +4,7 @@
  */
 
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  Dimensions,
-  FlatList,
-} from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import CourseCard from '../../components/Forum/CourseCard';
 import { COLORS } from '../../constants';
 import useCourses from '../../hooks/useCourses';
