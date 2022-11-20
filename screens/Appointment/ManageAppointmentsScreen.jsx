@@ -52,8 +52,8 @@ export default function ManageAppointmentsScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Active Appointments</Text>
-      {activeAppointments.length ? (
-        activeAppointments.map((appointment, index) => (
+      {FAKE_APPOINTMENTS.length ? (
+        FAKE_APPOINTMENTS.map((appointment, index) => (
           <ListItem key={index} bottomDivider>
             <ListItem.Content>
               <ListItem.Title>{appointment.subject}</ListItem.Title>
@@ -73,8 +73,8 @@ export default function ManageAppointmentsScreen() {
         <Text style={styles.info}>No active appointments</Text>
       )}
       <Text style={styles.title}>Past Appointments</Text>
-      {pastAppointments.length ? (
-        pastAppointments.map((appointment, index) => (
+      {FAKE_APPOINTMENTS.length ? (
+        FAKE_APPOINTMENTS.map((appointment, index) => (
           <ListItem key={index} bottomDivider>
             <ListItem.Content>
               <ListItem.Title>{appointment.subject}</ListItem.Title>
