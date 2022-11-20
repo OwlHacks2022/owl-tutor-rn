@@ -20,7 +20,7 @@ export default function useCourses() {
           }))
         );
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     getCourses();

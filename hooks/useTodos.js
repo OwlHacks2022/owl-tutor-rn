@@ -29,7 +29,7 @@ export default function useTodos() {
         ]);
       });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -43,7 +43,7 @@ export default function useTodos() {
       });
       await syncTodos();
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -58,7 +58,7 @@ export default function useTodos() {
       );
       await syncTodos();
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -68,7 +68,7 @@ export default function useTodos() {
       const todoRef = doc(db, 'users', userId, 'todos', id);
       await setDoc(todoRef, { title }, { merge: true });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -79,7 +79,7 @@ export default function useTodos() {
       await deleteDoc(todoRef);
       await syncTodos();
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

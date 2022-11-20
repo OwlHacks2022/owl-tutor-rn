@@ -33,7 +33,7 @@ export default function LoginScreen() {
           await AsyncStorage.removeItem('userName');
         }
       } catch (error) {
-        console.error(error);
+        console.log(error);
       } finally {
         setVerifying(false);
       }
@@ -72,7 +72,7 @@ export default function LoginScreen() {
             navigation.navigate('Root');
           }
         } catch (error) {
-          console.error(error);
+          console.log(error);
         } finally {
           setVerifying(false);
         }

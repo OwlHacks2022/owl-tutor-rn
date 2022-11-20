@@ -37,7 +37,7 @@ export default function useAppointments() {
         ]);
       });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -52,7 +52,7 @@ export default function useAppointments() {
       });
       await syncAppointments();
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -63,7 +63,7 @@ export default function useAppointments() {
       await deleteDoc(appointmentRef);
       await syncAppointments();
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

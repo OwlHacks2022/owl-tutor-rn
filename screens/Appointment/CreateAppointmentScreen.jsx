@@ -28,7 +28,7 @@ export default function CreateAppointmentScreen() {
       setSubject('');
       Alert.alert('Success', 'Appointment created successfully');
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
   const tutors = [

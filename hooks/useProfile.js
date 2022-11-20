@@ -17,7 +17,7 @@ export default function useProfile() {
         );
         setProfile(res.data);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     const syncProfileOnFirebase = async () => {
@@ -40,7 +40,7 @@ export default function useProfile() {
           { merge: true }
         );
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     getProfile();
