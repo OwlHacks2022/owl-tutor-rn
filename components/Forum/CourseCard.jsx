@@ -10,28 +10,29 @@ import {
 } from 'react-native';
 import { COLORS } from '../../constants';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
-export default function CourseCard() {
+export default function CourseCard({ name }) {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Course');
+        navigation.navigate('Course', {
+          name,
+        });
       }}
     >
       <View style={styles.container}>
-        <View style={styles.courseImagePlaceHolder} />
+        <View
+          style={[
+            styles.courseImagePlaceHolder,
+            {
+              backgroundColor: COLORS['grey-darken'],
+            },
+          ]}
+        />
         <View style={styles.wrapper}>
-          <View style={styles.topInfo}>
-            <Text style={styles.courseTitle}>Math 1A</Text>
-            <Text style={styles.info}>301234</Text>
-            <Text style={styles.info}>Professor Marnie</Text>
-          </View>
-          <Text style={styles.description}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem, laboriosam!
-          </Text>
+          <Text style={styles.courseTitle}>{name}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -47,10 +48,10 @@ const styles = StyleSheet.create({
   courseImagePlaceHolder: {
     width,
     height: 100,
-    backgroundColor: COLORS['yellow-tint'],
   },
   wrapper: {
     paddingHorizontal: 10,
+    paddingBottom: 10,
   },
   courseTitle: {
     fontSize: 20,
@@ -59,8 +60,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-  },
-  description: {
-    color: COLORS['grey-darken'],
   },
 });

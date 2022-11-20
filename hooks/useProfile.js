@@ -10,7 +10,6 @@ export default function useProfile() {
       try {
         const token = await AsyncStorage.getItem('token');
         const userId = await AsyncStorage.getItem('userId');
-        console.log('user id: ', userId);
         const res = await canvasApi.get(
           `/users/${userId}/profile?access_token=${token}`
         );

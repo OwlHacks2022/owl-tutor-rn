@@ -5,33 +5,36 @@
 
 import React from 'react';
 import {
-	View,
-	Text,
-	Image,
-	StyleSheet,
-	Dimensions,
-	FlatList,
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  FlatList,
 } from 'react-native';
 import CourseCard from '../../components/Forum/CourseCard';
 import { COLORS } from '../../constants';
+import useCourses from '../../hooks/useCourses';
 
 export default function ForumScreen() {
-	return (
-		<View style={styles.container}>
-			<FlatList
-				data={[{ key: 'a' }, { key: 'b' }]}
-				renderItem={({ item }) => <CourseCard />}
-			/>
-		</View>
-	);
+  const courses = useCourses();
+
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={courses}
+        renderItem={({ item }) => <CourseCard {...item} />}
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		paddingVertical: 20,
-		backgroundColor: COLORS.grey,
-	},
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+    backgroundColor: COLORS.grey,
+  },
 });
