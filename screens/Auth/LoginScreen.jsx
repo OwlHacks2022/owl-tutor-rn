@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  Image,
-  Alert,
-} from 'react-native';
-import { Button, Input } from 'react-native-elements';
+import { View, StyleSheet, Image, Alert } from 'react-native';
+import { Button } from 'react-native-elements';
 import LoadingIndicator from '../../components/common/LoadingIndicator';
 import { COLORS } from '../../constants';
 import canvasAPI from '../../api/canvas-api';
@@ -59,7 +52,6 @@ export default function LoginScreen() {
           if (res.status === 200) {
             const userId = data[0]?.enrollments[0]?.user_id;
             const accountId = data[0]?.account_id;
-            const rootAccountId = data[0]?.root_account_id;
 
             if (!userId || !accountId) {
               Alert.alert('Login Failed!');
